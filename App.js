@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, Alert } from 'react-native';
+import { View, FlatList, StyleSheet, Alert } from 'react-native';
 import { v4 as uuidv4 } from 'uuid';
 
 import Header from './components/Header'
@@ -12,23 +12,23 @@ const App = () => {
     { id: uuidv4(), text: 'Eggs' },
     { id: uuidv4(), text: 'Bread' },
     { id: uuidv4(), text: 'Juice' },
-  ])
+  ]);
 
   const deleteItem = (id) => {
     setItems(prevItems => {
-      return prevItems.filter(item => item.id != id)
-    })
-  }
+      return prevItems.filter(item => item.id != id);
+    });
+  };
 
   const addItem = (text) => {
     if (!text) {
-      Alert.alert('Error', 'Please enter an item.', { text: 'OK' })
+      Alert.alert('Error', 'Please enter an item.', { text: 'OK' });
     } else {
       setItems(prevItems => {
-        return [{ id: uuidv4(), text }, ...prevItems,]
-      })
+        return [{ id: uuidv4(), text }, ...prevItems,];
+      });
     }
-  }
+  };
 
   return (
     <View style={styles.container}>

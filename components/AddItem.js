@@ -25,8 +25,8 @@ const AddItem = ({ addItem }) => {
             <TouchableOpacity
                 style={styles.btn}
                 onPress={onSubmit}>
+                <Icon style={styles.btnIcon} name="plus" size={20} />
                 <Text style={styles.btnText}>
-                    <Icon name="plus" size={20} />
                     Add Item</Text>
             </TouchableOpacity>
         </View>
@@ -43,12 +43,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#c2bad8',
         padding: 9,
         margin: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     btnText: {
         color: 'darkslateblue',
         fontSize: 20,
         textAlign: 'center',
     },
+    btnIcon: {
+        color: 'darkslateblue',
+        paddingRight: 8,
+    }
 });
 
 export default AddItem;
